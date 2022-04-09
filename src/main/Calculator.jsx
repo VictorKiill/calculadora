@@ -51,6 +51,12 @@ export default class Calculator extends Component {
                     break;
                 default:
             }
+
+            if(isNaN(values[0]) || !isFinite(values[0])) {
+                this.clearMemory()
+                return
+            }
+            
             values[1] = 0
             this.setState({
                 displayValue: values[0],
